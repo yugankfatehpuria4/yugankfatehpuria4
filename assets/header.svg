@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="250" viewBox="0 0 880 250"
+  role="img" aria-label="Yugank Fatehpuria — GitHub profile card">
+  <title>Yugank Fatehpuria — 25 repositories, 3 stars</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="0.55" stop-color="#0f1620"/>
+      <stop offset="1" stop-color="#0d1117"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.12" cy="0.1" r="0.85">
+      <stop offset="0" stop-color="#3fb950" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#3fb950" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="avatarClip"><circle cx="78" cy="106" r="46"/></clipPath>
+  </defs>
+
+  <rect width="880" height="250" rx="16" fill="url(#bg)"/>
+  <rect width="880" height="250" rx="16" fill="url(#glow)"/>
+  <rect x="0.5" y="0.5" width="879" height="249" rx="15.5" fill="none" stroke="#21262d"/>
+
+  <circle cx="78" cy="106" r="49" fill="none" stroke="#3fb950" stroke-opacity="0.55" stroke-width="2"/>
+  <image x="32" y="60" width="92" height="92" clip-path="url(#avatarClip)"
+    href="data:image/jpeg;base64,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"/>
+
+  <text x="150" y="58" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13"
+    fill="#3fb950">@yugankfatehpuria4</text>
+
+  <text x="150" y="103" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif"
+    font-size="35" font-weight="700" fill="#e6edf3">Yugank Fatehpuria</text>
+
+  <text x="150" y="134" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif"
+    font-size="13.5" fill="#8b949e">Software Engineer in Progress 🚀 · 350+ DSA Problems · Full Stack Devel…</text>
+
+  <g transform="translate(150,176)">
+    <rect width="107.6" height="26" rx="13" fill="#161b22" stroke="#30363d"/>
+    <circle cx="15" cy="13" r="4.5" fill="#3178c6"/>
+    <text x="26" y="17.2" font-family="ui-monospace,SFMono-Regular,Menlo,monospace"
+      font-size="12" fill="#c9d1d9">TypeScript</text>
+  </g>
+  <g transform="translate(265.6,176)">
+    <rect width="107.6" height="26" rx="13" fill="#161b22" stroke="#30363d"/>
+    <circle cx="15" cy="13" r="4.5" fill="#f1e05a"/>
+    <text x="26" y="17.2" font-family="ui-monospace,SFMono-Regular,Menlo,monospace"
+      font-size="12" fill="#c9d1d9">JavaScript</text>
+  </g>
+  <g transform="translate(381.20000000000005,176)">
+    <rect width="79.8" height="26" rx="13" fill="#161b22" stroke="#30363d"/>
+    <circle cx="15" cy="13" r="4.5" fill="#3572A5"/>
+    <text x="26" y="17.2" font-family="ui-monospace,SFMono-Regular,Menlo,monospace"
+      font-size="12" fill="#c9d1d9">Python</text>
+  </g>
+  <g transform="translate(468.96000000000004,176)">
+    <rect width="58.9" height="26" rx="13" fill="#161b22" stroke="#30363d"/>
+    <circle cx="15" cy="13" r="4.5" fill="#663399"/>
+    <text x="26" y="17.2" font-family="ui-monospace,SFMono-Regular,Menlo,monospace"
+      font-size="12" fill="#c9d1d9">CSS</text>
+  </g>
+
+  <g transform="translate(762,0)">
+    <text x="46" y="96" text-anchor="middle"
+      font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif"
+      font-size="44" font-weight="700" fill="#e6edf3">3</text>
+    <text x="46" y="118" text-anchor="middle"
+      font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10"
+      letter-spacing="1.6" fill="#6e7681">TOTAL STARS</text>
+    <text x="46" y="150" text-anchor="middle"
+      font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif"
+      font-size="22" font-weight="700" fill="#e6edf3">25</text>
+    <text x="46" y="170" text-anchor="middle"
+      font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10"
+      letter-spacing="1.6" fill="#6e7681">REPOS</text>
+  </g>
+
+  <text x="150" y="222" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10"
+    fill="#484f58">Generated from the GitHub API and published from GitHub Actions</text>
+</svg>
