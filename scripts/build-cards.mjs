@@ -1,5 +1,6 @@
 /* ═══════════════════════════════════════════════════════════════════════
-   build-header.mjs — regenerates assets/header.svg from live GitHub data
+   build-cards.mjs — regenerates assets/header.svg and assets/stats.svg
+   from live GitHub data
 
    GitHub renders README images inside an <img>, which is a sandbox: no
    external fetches, no web fonts, no scripts. So the avatar is downloaded
@@ -7,7 +8,13 @@
    viewer already has. Anything referenced by URL here would silently
    render as a blank box.
 
-   Run: node scripts/build-header.mjs
+   These are drawn here rather than pulled from the usual badge services
+   on purpose: github-readme-stats' shared instance answers 503 whenever
+   it is over quota, and the old streak service's herokuapp.com domain
+   went dark with Heroku's free tier. A README full of broken images is
+   worse than one with fewer of them.
+
+   Run: node scripts/build-cards.mjs
    The daily workflow runs it and commits the result if it changed.
    ═══════════════════════════════════════════════════════════════════════ */
 import { writeFile, mkdir } from 'node:fs/promises';
@@ -83,6 +90,91 @@ function chip(label, x, y, color) {
       font-size="${fs}" fill="#c9d1d9">${xml(label)}</text>
   </g>`
   };
+}
+
+/* ── stats card ───────────────────────────────────────────────────────
+   Language share is computed from each repo's primary language rather
+   than the per-repo /languages byte counts: that would cost one API call
+   per repo and hits the unauthenticated 60/hour limit when run locally.
+   Repo counts are a coarser measure but stable and free.               */
+function statsCard({ stars, forks, repos, followers, langShare }) {
+  const W2 = 880;
+  const H2 = 236;
+  const barX = 470;
+  const barW = 372;
+
+  const rows = [
+    ['Total stars', stars],
+    ['Public repos', repos],
+    ['Followers', followers],
+    ['Forks', forks]
+  ]
+    .map(
+      ([label, val], i) => `
+    <g transform="translate(40,${74 + i * 38})">
+      <text x="0" y="0" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif"
+        font-size="13.5" fill="#8b949e">${xml(label)}</text>
+      <text x="330" y="0" text-anchor="end"
+        font-family="ui-monospace,SFMono-Regular,Menlo,monospace"
+        font-size="16" font-weight="700" fill="#e6edf3">${val}</text>
+    </g>`
+    )
+    .join('');
+
+  const total = langShare.reduce((n, l) => n + l.count, 0) || 1;
+  let stackX = 0;
+  const stackBar = langShare
+    .map((l) => {
+      const w = (l.count / total) * barW;
+      const seg = `<rect x="${(barX + stackX).toFixed(1)}" y="66" width="${w.toFixed(1)}" height="10"
+        fill="${LANG_COLOR[l.name] || '#8b949e'}"/>`;
+      stackX += w;
+      return seg;
+    })
+    .join('\n    ');
+
+  const legend = langShare
+    .map((l, i) => {
+      const col = i % 2;
+      const row = Math.floor(i / 2);
+      const x = barX + col * 190;
+      const y = 108 + row * 30;
+      const pct = ((l.count / total) * 100).toFixed(1);
+      return `<g transform="translate(${x},${y})">
+      <circle cx="5" cy="-4" r="5" fill="${LANG_COLOR[l.name] || '#8b949e'}"/>
+      <text x="17" y="0" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif"
+        font-size="12.5" fill="#c9d1d9">${xml(l.name)}</text>
+      <text x="175" y="0" text-anchor="end"
+        font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11.5"
+        fill="#6e7681">${pct}%</text>
+    </g>`;
+    })
+    .join('\n    ');
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W2}" height="${H2}" viewBox="0 0 ${W2} ${H2}"
+  role="img" aria-label="GitHub statistics for ${xml(USER)}">
+  <title>${stars} stars across ${repos} public repositories</title>
+  <rect width="${W2}" height="${H2}" rx="16" fill="#0d1117"/>
+  <rect x="0.5" y="0.5" width="${W2 - 1}" height="${H2 - 1}" rx="15.5" fill="none" stroke="#21262d"/>
+  <line x1="425" y1="34" x2="425" y2="${H2 - 34}" stroke="#21262d"/>
+
+  <text x="40" y="44" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11"
+    letter-spacing="1.4" fill="#3fb950">ACTIVITY</text>
+  ${rows}
+
+  <text x="${barX}" y="44" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11"
+    letter-spacing="1.4" fill="#3fb950">LANGUAGES</text>
+  <clipPath id="barClip"><rect x="${barX}" y="66" width="${barW}" height="10" rx="5"/></clipPath>
+  <g clip-path="url(#barClip)">
+    <rect x="${barX}" y="66" width="${barW}" height="10" fill="#161b22"/>
+    ${stackBar}
+  </g>
+  ${legend}
+
+  <text x="40" y="${H2 - 18}" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10"
+    fill="#484f58">Generated from the GitHub API and published from GitHub Actions</text>
+</svg>
+`;
 }
 
 async function main() {
@@ -179,9 +271,23 @@ async function main() {
 </svg>
 `;
 
+  const stats = statsCard({
+    stars,
+    forks: own.reduce((n, r) => n + r.forks_count, 0),
+    repos: own.length,
+    followers: user.followers,
+    langShare: Object.entries(langCount)
+      .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+      .slice(0, 6)
+      .map(([name, count]) => ({ name, count }))
+  });
+
   await mkdir(new URL('../assets/', import.meta.url), { recursive: true });
   await writeFile(new URL('../assets/header.svg', import.meta.url), svg);
-  console.log(`header.svg written — ${own.length} repos, ${stars} stars, langs: ${langs.join(', ')}`);
+  await writeFile(new URL('../assets/stats.svg', import.meta.url), stats);
+  console.log(
+    `header.svg + stats.svg written — ${own.length} repos, ${stars} stars, langs: ${langs.join(', ')}`
+  );
 }
 
 main().catch((e) => {

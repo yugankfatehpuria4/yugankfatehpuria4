@@ -1,7 +1,7 @@
 name: profile
 
 # Two jobs that keep the README's generated pieces current:
-#   header  — redraws assets/header.svg from live GitHub data, commits on change
+#   header  — redraws the assets/*.svg cards from live GitHub data, commits on change
 #   snake   — renders the contribution graph animation onto the `output` branch
 #
 # The snake art lives on its own orphan branch rather than main so the
@@ -32,22 +32,22 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Rebuild header card
+      - name: Rebuild profile cards
         env:
           # raises the API rate limit; no extra scope needed for public data
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: node scripts/build-header.mjs
+        run: node scripts/build-cards.mjs
 
       - name: Commit if it changed
         run: |
-          if git diff --quiet -- assets/header.svg; then
-            echo "header.svg unchanged — nothing to commit"
+          if git diff --quiet -- assets/; then
+            echo "cards unchanged — nothing to commit"
             exit 0
           fi
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/header.svg
-          git commit -m "chore: refresh profile header"
+          git add assets/
+          git commit -m "chore: refresh profile cards"
           git push
 
   snake:

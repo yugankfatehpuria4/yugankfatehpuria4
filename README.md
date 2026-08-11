@@ -70,12 +70,11 @@ Most recently a Frontend Development Intern at **NIC, New Delhi**, where I shipp
 
 <div align="center">
 
-<img height="165" src="https://github-readme-stats.vercel.app/api?username=yugankfatehpuria4&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&bg_color=0d1117&title_color=3fb950&icon_color=3fb950&text_color=c9d1d9" alt="GitHub stats">
-<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=yugankfatehpuria4&layout=compact&langs_count=8&hide_border=true&bg_color=0d1117&title_color=3fb950&text_color=c9d1d9" alt="Top languages">
+<img src="./assets/stats.svg" alt="GitHub activity and language breakdown" width="880">
 
-<br><br>
+<br>
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=yugankfatehpuria4&hide_border=true&background=0d1117&stroke=21262d&ring=3fb950&fire=3fb950&currStreakLabel=3fb950&sideNums=c9d1d9&currStreakNum=c9d1d9&dates=6e7681&sideLabels=c9d1d9" alt="Streak">
+<img src="https://streak-stats.demolab.com/?user=yugankfatehpuria4&hide_border=true&background=0d1117&stroke=21262d&ring=3fb950&fire=3fb950&currStreakLabel=3fb950&sideNums=c9d1d9&currStreakNum=c9d1d9&dates=6e7681&sideLabels=c9d1d9" alt="Contribution streak" width="500">
 
 </div>
 

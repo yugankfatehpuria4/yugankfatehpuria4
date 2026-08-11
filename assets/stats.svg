@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="236" viewBox="0 0 880 236"
+  role="img" aria-label="GitHub statistics for yugankfatehpuria4">
+  <title>3 stars across 25 public repositories</title>
+  <rect width="880" height="236" rx="16" fill="#0d1117"/>
+  <rect x="0.5" y="0.5" width="879" height="235" rx="15.5" fill="none" stroke="#21262d"/>
+  <line x1="425" y1="34" x2="425" y2="202" stroke="#21262d"/>
+
+  <text x="40" y="44" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11"
+    letter-spacing="1.4" fill="#3fb950">ACTIVITY</text>
+  
+    <g transform="translate(40,74)">
+      <text x="0" y="0" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif"
+        font-size="13.5" fill="#8b949e">Total stars</text>
+      <text x="330" y="0" text-anchor="end"
+        font-family="ui-monospace,SFMono-Regular,Menlo,monospace"
+        font-size="16" font-weight="700" fill="#e6edf3">3</text>
+    </g>
+    <g transform="translate(40,112)">
+      <text x="0" y="0" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif"
+        font-size="13.5" fill="#8b949e">Public repos</text>
+      <text x="330" y="0" text-anchor="end"
+        font-family="ui-monospace,SFMono-Regular,Menlo,monospace"
+        font-size="16" font-weight="700" fill="#e6edf3">25</text>
+    </g>
+    <g transform="translate(40,150)">
+      <text x="0" y="0" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif"
+        font-size="13.5" fill="#8b949e">Followers</text>
+      <text x="330" y="0" text-anchor="end"
+        font-family="ui-monospace,SFMono-Regular,Menlo,monospace"
+        font-size="16" font-weight="700" fill="#e6edf3">2</text>
+    </g>
+    <g transform="translate(40,188)">
+      <text x="0" y="0" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif"
+        font-size="13.5" fill="#8b949e">Forks</text>
+      <text x="330" y="0" text-anchor="end"
+        font-family="ui-monospace,SFMono-Regular,Menlo,monospace"
+        font-size="16" font-weight="700" fill="#e6edf3">1</text>
+    </g>
+
+  <text x="470" y="44" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11"
+    letter-spacing="1.4" fill="#3fb950">LANGUAGES</text>
+  <clipPath id="barClip"><rect x="470" y="66" width="372" height="10" rx="5"/></clipPath>
+  <g clip-path="url(#barClip)">
+    <rect x="470" y="66" width="372" height="10" fill="#161b22"/>
+    <rect x="470.0" y="66" width="133.9" height="10"
+        fill="#3178c6"/>
+    <rect x="603.9" y="66" width="119.0" height="10"
+        fill="#f1e05a"/>
+    <rect x="723.0" y="66" width="59.5" height="10"
+        fill="#3572A5"/>
+    <rect x="782.5" y="66" width="29.8" height="10"
+        fill="#663399"/>
+    <rect x="812.2" y="66" width="29.8" height="10"
+        fill="#e34c26"/>
+  </g>
+  <g transform="translate(470,108)">
+      <circle cx="5" cy="-4" r="5" fill="#3178c6"/>
+      <text x="17" y="0" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif"
+        font-size="12.5" fill="#c9d1d9">TypeScript</text>
+      <text x="175" y="0" text-anchor="end"
+        font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11.5"
+        fill="#6e7681">36.0%</text>
+    </g>
+    <g transform="translate(660,108)">
+      <circle cx="5" cy="-4" r="5" fill="#f1e05a"/>
+      <text x="17" y="0" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif"
+        font-size="12.5" fill="#c9d1d9">JavaScript</text>
+      <text x="175" y="0" text-anchor="end"
+        font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11.5"
+        fill="#6e7681">32.0%</text>
+    </g>
+    <g transform="translate(470,138)">
+      <circle cx="5" cy="-4" r="5" fill="#3572A5"/>
+      <text x="17" y="0" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif"
+        font-size="12.5" fill="#c9d1d9">Python</text>
+      <text x="175" y="0" text-anchor="end"
+        font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11.5"
+        fill="#6e7681">16.0%</text>
+    </g>
+    <g transform="translate(660,138)">
+      <circle cx="5" cy="-4" r="5" fill="#663399"/>
+      <text x="17" y="0" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif"
+        font-size="12.5" fill="#c9d1d9">CSS</text>
+      <text x="175" y="0" text-anchor="end"
+        font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11.5"
+        fill="#6e7681">8.0%</text>
+    </g>
+    <g transform="translate(470,168)">
+      <circle cx="5" cy="-4" r="5" fill="#e34c26"/>
+      <text x="17" y="0" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif"
+        font-size="12.5" fill="#c9d1d9">HTML</text>
+      <text x="175" y="0" text-anchor="end"
+        font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11.5"
+        fill="#6e7681">8.0%</text>
+    </g>
+
+  <text x="40" y="218" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10"
+    fill="#484f58">Generated from the GitHub API and published from GitHub Actions</text>
+</svg>
