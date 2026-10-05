@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="880" height="236" viewBox="0 0 880 236"
   role="img" aria-label="GitHub statistics for yugankfatehpuria4">
-  <title>3 stars across 29 public repositories</title>
+  <title>3 stars across 28 public repositories</title>
   <rect width="880" height="236" rx="16" fill="#0d1117"/>
   <rect x="0.5" y="0.5" width="879" height="235" rx="15.5" fill="none" stroke="#21262d"/>
   <line x1="425" y1="34" x2="425" y2="202" stroke="#21262d"/>
@@ -20,7 +20,7 @@
         font-size="13.5" fill="#8b949e">Public repos</text>
       <text x="330" y="0" text-anchor="end"
         font-family="ui-monospace,SFMono-Regular,Menlo,monospace"
-        font-size="16" font-weight="700" fill="#e6edf3">29</text>
+        font-size="16" font-weight="700" fill="#e6edf3">28</text>
     </g>
     <g transform="translate(40,150)">
       <text x="0" y="0" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif"
